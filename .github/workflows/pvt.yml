@@ -28,4 +28,4 @@ jobs:
           token: ${{ secrets.PAT }}
 
       - name: Check changes
-        run: echo "Checking changes made to repository files"
+        run: echo "Checking changes made to repository files" 
