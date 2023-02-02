@@ -1,12 +1,8 @@
-name: Experiment
+name: Detect Dispatch
 
 on:
-  push:
-    paths:
-      - '**'
-  pull_request:
-    paths:
-      - '**'
+  repository_dispatch:
+    types: [repo-push]
 
 jobs:
   test:
@@ -27,5 +23,5 @@ jobs:
           set-safe-directory: true
           token: ${{ secrets.PAT }}
 
-      - name: List repository files
-        run: ls
+      - name: Check changes
+        run: echo "Checking changes made to repository files" 
