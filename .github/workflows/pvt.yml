@@ -1,15 +1,41 @@
-name: Example Workflow
+name: Change Trigger
 
 on:
-  repository_dispatch:
+
+  push:
+
+    paths:
+
+      - '**'
+
+  pull_request:
+
+    paths:
+
+      - '**'
+
+
 
 jobs:
+
   test:
+
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+
+      - name: Checkout code
+
+        uses: actions/checkout@v2
+
         with:
+
+          ref: master
+
           repository: harshulgupt/json_pvt
-          ref: main
+
+          token: ${{ secrets.PAT }}
+
       - name: Check changes
-        run: echo "Checking changes made to repository files in json_pvt repository"
+
+        run: echo "Checking changes made to repository files"
