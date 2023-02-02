@@ -23,5 +23,5 @@ jobs:
           set-safe-directory: true
           token: ${{ secrets.PAT }}
 
-      - name: Check changes
-        run: echo "Checking changes made to repository files" 
+      - name: List repository files
+        run: ls
