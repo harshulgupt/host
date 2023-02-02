@@ -30,7 +30,7 @@ jobs:
 
         with:
 
-          ref: master
+          ref: main
 
           repository: harshulgupt/json_pvt
 
