@@ -4,9 +4,10 @@ on:
   push:
     paths:
       - '**'
-  pull_request:
-    paths:
-      - '**'
+    branches:
+      - main
+    repository_dispatch:
+      types: [repo-push]
 
 jobs:
   test:
