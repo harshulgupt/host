@@ -1,13 +1,8 @@
-name: Check changes
+name: Check changes PVT
 
 on:
-  push:
-    paths:
-      - '**'
-    branches:
-      - main
-    repository_dispatch:
-      types: [repo-push]
+  repository_dispatch:
+    types: [repo-push]
 
 jobs:
   test:
