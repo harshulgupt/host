@@ -1,9 +1,7 @@
-import os  # importing os module
+# read data from data.txt file
+with open("data.txt", "r") as f:
+    data = f.read()
 
-# defining Env variable with 'HOME' as value
-key = "LAL"
-
-# invoking getenv() method
-value = os.getenv(key, default=None)
+# write data to output.txt file
 with open("output.txt", "w") as f:
-    f.write(f"Value of env variable key='HOME': {value}\n")
+    f.write(data)
