@@ -20,7 +20,7 @@ jobs:
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
       with:
-        notebook: "notebooks/homepage.ipynb"
+        notebook: "notebooks/note.ipynb"
         isReport: False
         poll: True
     
