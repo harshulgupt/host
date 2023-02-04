@@ -19,6 +19,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
+        LAL: ${{ secrets.LAL }}
       with:
         notebook: "notebooks/note.ipynb"
         isReport: False
