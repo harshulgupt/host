@@ -1,0 +1,23 @@
+name: Retrieve data from private repository
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  PAT: ${{ secrets.PAT }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Retrieve data from private repository
+      run: |
+     
+        python notebooks/script.py
