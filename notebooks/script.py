@@ -1,4 +1,4 @@
-# read data from data.txt file
+# read data from data.txt
 with open("data.txt", "r") as f:
     data = f.read()
 
