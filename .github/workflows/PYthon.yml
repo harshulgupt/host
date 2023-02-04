@@ -1,23 +1,24 @@
-name: Retrieve data from private repository
+name: Execute script
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
 
 env:
-  PAT: ${{ secrets.PAT }}
+  LAL: ${{ secrets.LAL }}
 
 jobs:
-  build:
+  execute_script:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Retrieve data from private repository
+    - name: Run script
+      env:
+        LAL: ${{ env.LAL }}
       run: |
-     
-        python notebooks/script.py
+        #!/bin/bash
+        python3 notebooks/script.py
