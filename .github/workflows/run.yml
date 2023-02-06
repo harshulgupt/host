@@ -1,9 +1,9 @@
-name: run-notebook 
+name: Run_Notebooks 
 
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Check changes PVT"]
+    workflows: ["Check changes"]
     types:
       - completed
 
