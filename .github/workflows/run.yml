@@ -53,9 +53,28 @@ jobs:
       with:
         notebook: "notebooks/individual_research_pages.ipynb"
         isReport: False
-        poll: True        
+        poll: True
+    - uses: yaananth/run-notebook@v2
+      env:
+        RUNNER: ${{ toJson(runner) }}
+        SECRETS: ${{ toJson(secrets) }}
+        GITHUB: ${{ toJson(github) }}
+        LAL: ${{ secrets.LAL }}
+      with:
+        notebook: "notebooks/research.ipynb"
+        isReport: False
+        poll: True
+    - uses: yaananth/run-notebook@v2
+      env:
+        RUNNER: ${{ toJson(runner) }}
+        SECRETS: ${{ toJson(secrets) }}
+        GITHUB: ${{ toJson(github) }}
+        LAL: ${{ secrets.LAL }}
+      with:
+        notebook: "notebooks/contact.ipynb"
+        isReport: False
+        poll: True  
         
-    
     - name: Commit files
       id: commit
       run: |
