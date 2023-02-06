@@ -21,7 +21,7 @@ jobs:
           lfs: false
           submodules: false
           set-safe-directory: true
-          token: ${{ secrets.testvar }}
+          token: ${{ secrets.PAT }}
 
       - name: Check changes
         run: echo "Checking changes made to repository files" 
