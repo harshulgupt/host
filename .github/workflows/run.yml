@@ -19,7 +19,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/homepage.ipynb"
         isReport: False
@@ -29,7 +29,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/people.ipynb"
         isReport: False
@@ -39,7 +39,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/individual_person_pages.ipynb"
         isReport: False
@@ -49,7 +49,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/individual_research_pages.ipynb"
         isReport: False
@@ -59,7 +59,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/research.ipynb"
         isReport: False
@@ -69,7 +69,7 @@ jobs:
         RUNNER: ${{ toJson(runner) }}
         SECRETS: ${{ toJson(secrets) }}
         GITHUB: ${{ toJson(github) }}
-        LAL: ${{ secrets.LAL }}
+        LAL: ${{ secrets.testvar }}
       with:
         notebook: "notebooks/contact.ipynb"
         isReport: False
