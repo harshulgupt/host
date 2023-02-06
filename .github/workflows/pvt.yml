@@ -1,8 +1,12 @@
-name: Check changes PVT
+name: Check changes
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [repo-push]
+  push:
+    paths:
+      - '**'
 
 jobs:
   test:
