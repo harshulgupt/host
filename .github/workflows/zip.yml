@@ -7,39 +7,13 @@ jobs:
   copy_zip_file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout groupwebsite_generator repository
-        uses: actions/checkout@v2
-        with:
-          repository: harshulgupt/host
-          ref: main
-
-      - name: Archive website
-        run: zip -r website.zip images/
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: images
-          path: website.zip
-
-      - name: Download artifact in kerzendorf-group.github.io repository
-        uses: actions/download-artifact@v2
+      - name: Push generated webpage to another repository
+        uses: nkoppel/push-files-to-another-repository@1.1.0
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
+          ACCESS_DATA: ${{ secrets.ACCESS_DATA }}
         with:
-          name: images
-          path: /
-
-      - name: Checkout kerzendorf-group.github.io repository
-        uses: actions/checkout@v2
-        with:
-          repository: harshulgupt/workflow
-          ref: main
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
-
-      - name: Copy website.zip
-        run: cp /website.zip .
-
-      - name: Unzip website.zip
-        run: unzip website.zip
+          source-files: "images/"
+          destination-username: "harshulgupt"
+          destination-repository: "workflow"
+          destination-directory: "projects/my-project"
+          commit-email: "harshulgupt@gmail.com"
