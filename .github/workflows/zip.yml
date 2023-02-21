@@ -27,12 +27,16 @@ jobs:
         with:
           name: images
           path: /
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
 
       - name: Checkout kerzendorf-group.github.io repository
         uses: actions/checkout@v2
         with:
           repository: harshulgupt/workflow
           ref: main
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
 
       - name: Copy website.zip
         run: cp /website.zip .
