@@ -1,0 +1,41 @@
+name: Zip copy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  copy_zip_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout groupwebsite_generator repository
+        uses: actions/checkout@v2
+        with:
+          repository: harshulgupt/host
+          ref: main
+
+      - name: Archive website
+        run: zip -r website.zip images/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: images
+          path: website.zip
+
+      - name: Download artifact in kerzendorf-group.github.io repository
+        uses: actions/download-artifact@v2
+        with:
+          name: website
+          path: /
+
+      - name: Checkout kerzendorf-group.github.io repository
+        uses: actions/checkout@v2
+        with:
+          repository: harshulgupt/workflow
+          ref: main
+
+      - name: Copy website.zip
+        run: cp /website.zip .
+
+      - name: Unzip website.zip
+        run: unzip website.zip
