@@ -24,11 +24,11 @@ jobs:
 
       - name: Download artifact in kerzendorf-group.github.io repository
         uses: actions/download-artifact@v2
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
         with:
           name: images
           path: /
-        env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_DATA }}
 
       - name: Checkout kerzendorf-group.github.io repository
         uses: actions/checkout@v2
